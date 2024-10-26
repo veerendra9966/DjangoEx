@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %}Sheryians Coding School{% endblock %}
+
+{% block content %}
+    <div class="home-content">
+        <div class="main1">
+            <h1>
+                <span>We only <span class="text-highlight">
+                    teach</span> <br>
+                what we are really <br>
+                really <span class="italic">good</span> at. <br>
+                </span>
+            </h1> <br>
+            <button class="btn">
+            <a href="/courses" class="btn-anchor">
+                Check Courses-Make an Impact
+            </a>  
+            </button>
+        </div>
+
+        <div class="bottom">
+            <aside class="aside">
+                <h2>24k+</h2>
+                <p>Students taught</p>
+              </aside>
+            <aside class="aside">
+                <h2>9+</h2>
+                <p>Instructors</p>
+            </aside>
+            <aside class="aside">
+                <h2>320k+</h2>
+                <p>Youtube Subs.</p>
+            </aside>
+            
+        </div>
+
+        <div class="text-high">
+            we do whatever it takes to help you
+            <br>
+            <p class="text-highlight2">understand the concepts.</p>
+        </div>
+        <div class="iframe-video">
+            <iframe width="1000" height="600" src="https://www.youtube.com/embed/60SRAWmMXyc?si=inVdQSJcPl9F6pz_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <br><br><br>
+            <a href="#" class="explore-btn">Explore free learning</a>
+        </div>
+        <h1 class="home-courses">Explore Courses</h1>
+        <br><br>    
+        <div class="card-container" id="explore">
+           {% for course in homecourses %}
+           <div class="card">
+               <img src="{{ course.image.url }}" class="card-img" alt="{{ course.title }}">
+               <div class="card-body">
+                   <h5 class="card-title">{{ course.title }}</h5>
+                   <p class="card-text">{{ course.description }}</p>
+                   <hr><br>
+                   <p class="categories-para">
+                       {% for category in course.categories.all %}
+                           <span class="categories">{{ category.name }}{% if not forloop.last %} {% endif %}</span>
+                       {% endfor %}
+                   </p>
+                </div><br>
+                <div class="author-price">
+                    <span class="author">By {{ course.author_name }}</span>
+                    <span class="price">₹{{ course.price }}</span>
+                </div>
+                <a href="{% url 'add_to_cart' course.id %}" class="buy-now add-to-cart">Add To Cart</a>
+                <a href="#" class="buy-now">Buy Now</a>
+           </div>
+           {% endfor %}
+        </div>
+        <div class="top-companies">
+            <p class="company"><span>
+                Top <span class="text-highlightcompany">companies</span> our students working with
+              </span></p>
+        </div>
+        <div class="logos1">
+            <img class="img-logo" src="https://ik.imagekit.io/sheryians/companies-logo/dark-theme/netlinklogo_A5k0VjsZL.webp?updatedAt=1713975960145" alt="">
+            <img class="img-logo" src="https://ik.imagekit.io/sheryians/companies-logo/dark-theme/mindtree%20logo_sj0PIBh91l.webp?updatedAt=1713975960351" alt="">
+            <img class="img-logo" src="https://ik.imagekit.io/sheryians/companies-logo/dark-theme/wallmartlogo_vR8JHQ_h20.webp?updatedAt=1713975960123" alt="">
+          </div>
+        <div class="logos2">
+            <img class="img-logo" src="https://ik.imagekit.io/sheryians/companies-logo/dark-theme/rapidops%20logo_ki9BX1CCNf.webp?updatedAt=1713975960174" alt="">
+            <img class="img-logo" src="https://ik.imagekit.io/sheryians/companies-logo/dark-theme/tcs%20logo_PglyFlXHbC.webp?updatedAt=1713975960122" alt="">
+            <img class="img-logo" src="https://ik.imagekit.io/sheryians/companies-logo/dark-theme/amazon%20logo_WQtU99KWC.webp?updatedAt=1713975960172" alt="">
+            <img class="img-logo" src="https://ik.imagekit.io/sheryians/companies-logo/dark-theme/wipro%20logo_ezOSPx52r8.webp?updatedAt=1713975960224" alt="">
+            <img class="img-logo" src="https://ik.imagekit.io/sheryians/companies-logo/dark-theme/gfg%20logo_gixPTWASN.webp?updatedAt=1713975960103" alt="">
+        </div>
+        <div class="explorecourses">
+        <a href="#explore" class="explore-courses">Explore Courses</a>
+        </div>
+
+    </div>
+
+    
+{% endblock %}
+

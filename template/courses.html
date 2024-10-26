@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Sheryians Coding School{% endblock %}
+
+{% block content %}
+    <h1 class="courses-title">Courses</h1>
+    <div class="card-container" >   
+        {% for course in courses %}
+        <div class="card">
+            <img src="{{ course.image.url    }}" class="card-img" alt="{{ course.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ course.title }}</h5>
+                <p class="card-text">{{ course.description }}</p>
+                <p class="categories-para">
+                    {% for category in course.categories.all %}
+                        <span class="categories">{{ category.name }}{% if not forloop.last %} {% endif %}</span>
+                    {% endfor %}
+                </p>
+                <br>
+            </div>
+            <div class="author-price">
+                <span class="author">{{ course.author_name }}</span>
+                <span class="price">₹{{ course.price }}</span>
+            </div>
+            <a href="{% url 'add_to_cart' course.id %}" class="buy-now add-to-cart">Add To Cart</a>
+            <a href="#" class="buy-now">Buy Now</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

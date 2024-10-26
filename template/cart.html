@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Shopping Cart{% endblock %}
+
+{% block content %}
+
+
+<div class="cart-container">
+    <h1>Your Cart</h1>
+    {% if cart_items %}
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                    <tr class="cart-item">
+                        <td><img src="{{ item.courses.image.url }}" alt="{{ item.courses.title }}"></td>
+                        <td>{{ item.courses.title }}</td>
+                        <td>{{ item.courses.description }}</td>
+                        <td>₹{{ item.courses.price }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>
+                            <form action="{% url 'remove_from_cart' item.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %}
+</div>
+{% endblock %}

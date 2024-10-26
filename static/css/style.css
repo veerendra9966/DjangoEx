@@ -1,0 +1,777 @@
+@font-face {
+    font-family: 'Neue Machina Light';
+    src: url('/static/fonts/NeueMachina-Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #0c0c0c;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Navbar styling */
+.navbar {
+    width: 100%;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(5px);
+    margin: 20px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-items {
+    width: 80%;
+}
+
+.logo {
+    width: 20px; /* Increased size for better visibility */
+    margin-right: 10px;
+    margin-bottom: -6px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 16px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 8px 8px;
+    font-size: 16px;
+    font-family: 'Neue Machina Light', sans-serif;
+}
+
+.nav-link:hover {
+    background-color: #ffffff;
+    border-radius: 5px;
+    color: black;
+}
+
+.contactus {
+    background-color: #24CFA6;
+    border-radius: 10px;
+    padding: 8px 5px;
+    color: black;
+}
+
+.contactus:hover {
+    background-color: #000000;
+    color: white;
+    border-radius: 10px;
+}
+
+.logout {
+    background-color: red;
+    border-radius: 20px;
+}
+
+.cart-nav {
+    background-color: #24CFA6;
+    border-radius: 10px;
+    padding: 8px 4px;
+    color: black;
+}
+
+.cart-nav:hover {
+    background-color: #000000;
+    color: white;
+    border-radius: 10px;
+}
+
+.form-control {
+    width: 200px;
+    height: 35px;
+}
+/* 
+.form-inline{
+    width: 200px;
+    background-color: aquamarine;
+    height: 40px;
+} */
+.div-search{
+    width: 220px;
+    height: 50px;
+    margin-top: -50px;
+}
+.form-inline .form-control {
+    width: 120px;
+}
+
+.btn-outline-success {
+    color: rgb(2, 2, 2);
+    border-color: white;
+}
+
+
+.btn-outline-success:hover {
+    color: black;
+    background-color: white;
+    border-color: white;
+}
+
+
+
+
+
+/* Search Results Styling */
+.search-results-container {
+    width: 80%;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.product-details h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-details p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #24CFA6;
+    margin-bottom: 10px;
+}
+
+.add-to-cart-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #24CFA6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #1e9a83;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Main content styling */
+.main-content {
+    padding: 20px 20px;
+}
+.home-content{
+    width:100%;
+}
+.home-content h1{
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Neue Machina Light', sans-serif;
+}
+.text-highlight{
+    color: #24cfa6;
+    font-size: 80px;
+}
+.italic{
+    font-style: italic;
+    font-weight:100;
+    font-family: "juana";
+    font-size:85px;
+}
+.btn {
+    padding: 10px 15px;
+    width: fit-content;
+    background-color: #24cfa6;
+    color: var(--black);
+    border-radius: 0.4em;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+    margin:30px 0px;
+}
+.btn-anchor{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+.main1{
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.bottom{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    margin: 50px 0px;
+} 
+.bottom aside h2,p{
+    margin: 0px 60px;
+    text-align: center;
+    font-size: 24px;
+}
+.bottom aside p{
+    font-family: 'Neue Machina Light', sans-serif;
+}
+.text-high{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 42px;
+    font-family: 'Neue Machina Light', sans-serif;
+}
+.text-highlight2{
+    font-size: 42px;
+    color: #24cfa6;
+    font-family: 'Neue Machina Light', sans-serif;
+}
+.iframe-video{
+   margin: 50px 150px;
+   text-align: center;
+   width: 80vw;
+}
+.explore-btn{
+    background-color: #24cfa6;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    width: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 21px;
+    padding: 10px 32px;
+    border-radius: 10px;
+}
+.home-courses{
+    font-family: 'Neue Machina Light', sans-serif;
+    color: white;
+    font-size: 40px;
+    margin-left: -700px;
+}
+.top-companies{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Neue Machina Light', sans-serif;
+    margin-top: 100px;
+}
+.company{
+    font-size: 50px;
+    width: 700px;
+    color: white;
+}
+.text-highlightcompany{
+    font-size:50px ;
+    color: #24CFA6;
+}
+.logos1{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.logos2{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.img-logo{
+    width: 200px;
+}
+.explorecourses{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.explore-courses{
+    background-color: #24cfa6;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    width: 180px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 21px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+/* Container for the card deck */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 10px;
+    justify-content: center; /* Center the cards horizontally */
+}
+
+/* Heading styling */
+.courses-title {
+    text-align: center;
+    color:white;
+    font-size: 50px;
+    margin: 20px 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    border-radius: 16px 16px 0px 0px ;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.347);
+    background-color: #393838;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-bottom: 16px; /* Add some space between cards */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Card image styling */
+.card-img {
+    width: 100%;
+    height: 35%;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Card body styling */
+.card-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60%;
+}
+
+/* Title styling */
+.card-title {
+    margin: 0 0 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Text styling */
+.card-text {
+    margin: 5px 0;
+    text-align: justify;
+    color: #ffffff;
+    flex-grow: 1; /* Takes up remaining space */
+    font-size: 16px;
+}
+
+/* Category styling */
+.categories-para {
+    color: #ffffff;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+}
+
+.categories {
+    margin: 2px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+/* Author and price styling */
+.author-price {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 14px;
+    background-color: rgb(0, 0, 0);
+}
+
+/* Buy Now button styling */
+.buy-now {
+    width: 94%;
+    padding: 12px;
+    text-align: center;
+    background-color:#24cfa6;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 24px;
+}
+/* Buy Now button styling */
+
+
+.buy-now:hover {
+    background-color:#0bffc6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer styling */
+.footer {
+    width: 100%;
+    height: 300px;
+    background-color: #000000;
+    color: white;
+    padding: 30px 0px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.connect{
+    font-size: small;
+    font-family: 'Neue Machina Light', sans-serif;
+}
+.footer-icons{
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: -10px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #E9E9E9;
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    background-color: #222;
+    padding: 10px 10px;
+}
+
+.footer-icon{
+    width: 40px;
+}
+
+/* login */
+
+.container {
+    border-radius: 10px;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.login-name {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Neue Machina Light', sans-serif;
+    font-size: 40px;
+}
+.login{
+    height: 100%;
+    align-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction:column;
+    color: white;
+    font-family: 'Neue Machina Light', sans-serif;
+    padding: 30px;
+}
+
+form input, form button {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    width: 300px;
+    border: none;
+}
+form input, form button::placeholder{
+    font-size: 20px;
+    color: #000000;
+}
+
+.login-btn-div{
+    margin: 10px 0px 0px 200px;
+}
+.login-btn{
+    width: 100px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    align-self: center;
+    border-radius: 10px;
+    color: rgb(14, 14, 14);
+    background-color:#38d6b7;
+    cursor: pointer;
+    border: none;
+    font-family: 'Neue Machina Light', sans-serif;
+}
+.register-btn{
+    text-decoration: none;
+    width: 100px;
+    color:black;
+    background-color: #38d6b7;
+    padding: 10px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.login-btn:hover {
+    background-color: rgb(5, 255, 255);
+    color: black;
+}
+.login-button{
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background:#000000;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+.login-button:hover{
+    background-color: #00ffff;
+    color: black;
+}
+.login-img{
+    height: 100%;
+    width: 500px;
+}
+
+.container-register{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #000428, #004e92);
+    text-align: center;
+}
+.register{
+    width:500px;
+    height: 100%;
+    align-content:center ;
+}
+.register-button{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    padding: 10px 16px;
+    border-radius: 12px;
+    align-self: center;
+    margin: 10px;
+    background-color:cornflowerblue;
+}
+.register-button:hover{
+    background-color: #00ffff;
+    color: black;
+}
+.register-name{
+    font-size: 50px;
+    font-family: 'Neue Machina Light', sans-serif;
+    color:#24cfa6;
+    margin: 10px;
+}
+
+
+
+/* Cart */
+
+
+
+.buy-now{
+    width:93%;
+    display: block;
+    height: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 800;
+    margin-top: 0.5vw;
+}
+.add-to-cart{
+    background-color: aqua;
+}
+
+
+
+
+.cart-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th, .cart-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.cart-table th {
+    background-color: #f2f2f2;
+}
+
+.cart-table img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.cart-item td {
+    vertical-align: middle;
+}
+
+.cart-item form {
+    display: inline;
+}
+
+.cart-item button {
+    width: 100px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cart-item button:hover {
+    background-color: #c0392b;
+}
+
+

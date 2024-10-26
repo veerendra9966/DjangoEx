@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <h2 class="login-name">Login</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="login-btn-div">
+                    <button type="submit" class="login-btn">Login</button>
+                    <a href="{% url 'register' %}" class="register-btn">Register</a>
+                </div>
+            </form>
+        </div>
+        <div>
+            <img class="login-img" src="https://ik.imagekit.io/sheryians/re-imagine/forms_juF8FGrpz.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
